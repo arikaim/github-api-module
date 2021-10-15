@@ -26,6 +26,7 @@ class ListUserRepositories extends AbstractApiFunction implements ApiFunctionInt
     {
         $this
             ->method('GET')
-            ->path('user/repos');    
+            ->path('user/repos')
+            ->paramsType('query');    
     }
 }

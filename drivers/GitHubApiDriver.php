@@ -18,7 +18,7 @@ use Arikaim\Modules\Api\Interfaces\ApiClientInterface;
 /**
  * GitHub api driver class
  */
-class GitHubApiDriver extends AbstractApiClient implements DriverInterface, ApiClientInterface
+class GithubApiDriver extends AbstractApiClient implements DriverInterface, ApiClientInterface
 {   
     use Driver;
 
@@ -27,7 +27,7 @@ class GitHubApiDriver extends AbstractApiClient implements DriverInterface, ApiC
      */
     public function __construct()
     {
-        $this->setDriverParams('github-api','repository','GitHubApiDriver','Github Api driver');      
+        $this->setDriverParams('github-api','repository','GithubApiDriver','Github Api driver');      
     }
 
     /**
@@ -45,15 +45,16 @@ class GitHubApiDriver extends AbstractApiClient implements DriverInterface, ApiC
     /**
      * Get authorization header or false if api not uses header for auth
      *
+     * @param array|null $params
      * @return array|null
     */
-    public function getAuthHeaders(): ?array
+    public function getAuthHeaders(?array $params = null): ?array
     {
         return [
             'Authorization: token ' . $this->oauthToken,
-            'Accept: application/vnd.github.nebula-preview+json',
+            'Accept: application/vnd.github.v3+json',
             'User-Agent: Arikaim CMS'
-        ];
+        ];       
     }
 
     /**

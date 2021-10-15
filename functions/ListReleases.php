@@ -26,6 +26,7 @@ class ListReleases extends AbstractApiFunction implements ApiFunctionInterface
     {
         $this
             ->method('GET')
-            ->path('repos/{{owner}}/{{repo}}/releases');    
+            ->path('repos/{{owner}}/{{repo}}/releases')
+            ->paramsType('path');    
     }
 }

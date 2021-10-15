@@ -26,6 +26,7 @@ class GetLatestRelease extends AbstractApiFunction implements ApiFunctionInterfa
     {
         $this
             ->method('GET')
-            ->path('repos/{{owner}}/{{repo}}/releases/latest');    
+            ->path('repos/{{owner}}/{{repo}}/releases/latest')
+            ->paramsType('path');    
     }
 }

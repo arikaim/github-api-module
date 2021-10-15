@@ -27,6 +27,7 @@ class DownloadFile extends AbstractApiFunction implements ApiFunctionInterface
         $this->addHeader('Accept: application/vnd.github.v3.raw');
         $this
             ->method('GET')
-            ->path('repos/{{owner}}/{{repo}}/contents/{{path}}');          
+            ->path('repos/{{owner}}/{{repo}}/contents/{{path}}')
+            ->paramsType('path');          
     }
 }

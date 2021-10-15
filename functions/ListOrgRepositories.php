@@ -26,6 +26,7 @@ class ListOrgRepositories extends AbstractApiFunction implements ApiFunctionInte
     {
         $this
             ->method('GET')
-            ->path('orgs/{{organization}}/repos');       
+            ->path('orgs/{{organization}}/repos')
+            ->paramsType('path');       
     }
 }

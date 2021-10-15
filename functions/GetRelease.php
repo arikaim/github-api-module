@@ -13,9 +13,9 @@ use Arikaim\Modules\Api\AbstractApiFunction;
 use Arikaim\Modules\Api\Interfaces\ApiFunctionInterface;
 
 /**
- * ListTags api call
+ * GetRelease api call
  */
-class ListTags extends AbstractApiFunction implements ApiFunctionInterface
+class GetRelease extends AbstractApiFunction implements ApiFunctionInterface
 {
     /**
      * Initialize api funciton
@@ -26,7 +26,7 @@ class ListTags extends AbstractApiFunction implements ApiFunctionInterface
     {
         $this
             ->method('GET')
-            ->path('repos/{{owner}}/{{repo}}/tags')
+            ->path('repos/{{owner}}/{{repo}}/releases/{{release_id}}')
             ->paramsType('path');    
     }
 }

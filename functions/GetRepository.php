@@ -26,6 +26,7 @@ class GetRepository extends AbstractApiFunction implements ApiFunctionInterface
     {
         $this
             ->method('GET')
-            ->path('repos/{{owner}}/{{repo}}');    
+            ->path('repos/{{owner}}/{{repo}}')
+            ->paramsType('path');    
     }
 }

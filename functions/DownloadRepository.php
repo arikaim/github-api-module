@@ -27,6 +27,7 @@ class DownloadRepository extends AbstractApiFunction implements ApiFunctionInter
         $this->addHeader('Accept: application/vnd.github.v3.raw');
         $this         
             ->method('GET')
-            ->path('repos/{{owner}}/{{repo}}/zipball/{{version}}');        
+            ->path('repos/{{owner}}/{{repo}}/zipball/{{version}}')
+            ->paramsType('path');        
     }
 }
